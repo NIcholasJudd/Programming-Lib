@@ -9,4 +9,5 @@ Algorithms And Data Structures (i built the website csci321ga1.me and built the 
 
   My capstone project for Uni. Placed 2nd overall in the 2015 tradeshow
 
-    Our aim is to develop an interactive learning tool that visually demonstrates the behaviors and uses of key algorithms       and data structures, titled Professor Alberton's Algorithmic Adventures.
+    Our aim is to develop an interactive learning tool that visually demonstrates the behaviors and uses of key algorithms
+    and data structures, titled Professor Alberton's Algorithmic Adventures.

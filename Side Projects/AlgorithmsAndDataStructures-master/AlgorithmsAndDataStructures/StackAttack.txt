@@ -1,0 +1,6 @@
+Professor: Welcome to Stack Attack!
+Professor: Pop! the stack.
+Companion:          Pop! the stack again...
+Professor: You will only win if the final
+Professor: stack is in the correct order.
+Companion:                        Good luck!

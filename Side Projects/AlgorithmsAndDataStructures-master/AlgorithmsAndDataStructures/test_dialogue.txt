@@ -1,0 +1,15 @@
+professor
+This is a test
+This is my second string
+companion
+When is it my turn to talk?
+professor
+...but you are talking
+companion
+I am?
+...I never get to say the things
+professor
+...
+companion
+...You are always saying the things
+All the things

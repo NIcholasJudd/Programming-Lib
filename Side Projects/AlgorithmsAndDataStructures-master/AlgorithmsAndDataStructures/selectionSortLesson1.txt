@@ -1,0 +1,12 @@
+Slide: selectionSortLessonIntro.png
+Slide: selectionSortLesson1.png
+Slide: selectionSortLesson2.png
+Slide: selectionSortLesson3.png
+Slide: selectionSortLesson4.png
+Slide: selectionSortLesson5.png
+Slide: selectionSortLesson6.png
+Slide: selectionSortLesson7.png
+Slide: selectionSortLesson8.png
+Slide: selectionSortLesson9.png
+Slide: selectionSortLesson10.png
+Slide: selectionSortLesson11.png

@@ -1,0 +1,4 @@
+Professor: Here you can watch my computer sort some data!
+Companion: Select a sorting algorithm...
+Professor: ...one of three!
+Companion:            Don't forget to shuffle!

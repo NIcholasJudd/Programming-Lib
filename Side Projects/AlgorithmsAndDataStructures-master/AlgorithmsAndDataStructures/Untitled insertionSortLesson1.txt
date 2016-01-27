@@ -1,0 +1,11 @@
+Slide: insertionSortLessonIntro.png
+Slide: insertionSortLesson1.png
+Slide: insertionSortLesson2.png
+Slide: insertionSortLesson3.png
+Slide: insertionSortLesson4.png
+Slide: insertionSortLesson5.png
+Slide: insertionSortLesson6.png
+Slide: insertionSortLesson7.png
+Slide: insertionSortLesson8.png
+Slide: insertionSortLesson9.png
+Slide: insertionSortLesson10.png

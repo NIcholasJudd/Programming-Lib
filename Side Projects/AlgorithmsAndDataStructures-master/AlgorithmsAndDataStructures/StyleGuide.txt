@@ -1,0 +1,21 @@
+On file naming and conventions
+
+ResourcePath.hpp
+~~~~~~~~~~~~~~~~
+	Contains all the headers for the project
+	All other header files need only #include "ResourcePath.hpp"
+
+MainLoop.h / MainLoop.cpp
+~~~~~~~~~~~~~~~~~~~~~~~~~
+	
+	
+Each sub menu and the subsequent areas of the application should begin with the 
+same prefix.
+
+I.e.	DataStructuresSubMenu.cpp
+		DataStructuresBinaryTree.cpp
+		DataStructuresDoublyLinkedList.cpp
+		SortingSubMenu.cpp
+		SortingBubbleSort.cpp
+
+

@@ -1,0 +1,363 @@
+body {
+    background-color: #f5f5f5;
+}
+
+.login-container{
+    background-color: rgba(245,245,245,0.5);
+    padding-bottom: 20px;
+    border-radius: 20px;
+}
+.page-bg {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right:0;
+    position: absolute;
+    padding-top: 100px;
+    width: 100%;
+}
+
+.page-login{
+    background: url("../images/SydneyBW.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.bg-orange {
+    background-color: rgba(246, 128, 13, 0.9);
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.bg-orange label {
+    margin-top: 10px;
+}
+
+.btn-grey {
+    color: #fff;
+    background-color: #525252;
+    border-color: #424242;
+    /*margin-right: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;*/
+    width: 100px;
+}
+.btn-grey:hover,
+.btn-grey:focus,
+.btn-grey:active,
+.btn-grey.active,
+.open > .dropdown-toggle.btn-grey {
+    color: #fff;
+    background-color: #474747;
+    border-color: #424242;
+}
+.btn-grey:active,
+.btn-grey.active,
+.open > .dropdown-toggle.btn-grey {
+    background-image: none;
+}
+.btn-grey.disabled,
+.btn-grey[disabled],
+fieldset[disabled] .btn-grey,
+.btn-grey.disabled:hover,
+.btn-grey[disabled]:hover,
+fieldset[disabled] .btn-grey:hover,
+.btn-grey.disabled:focus,
+.btn-grey[disabled]:focus,
+fieldset[disabled] .btn-grey:focus,
+.btn-grey.disabled:active,
+.btn-grey[disabled]:active,
+fieldset[disabled] .btn-grey:active,
+.btn-grey.disabled.active,
+.btn-grey[disabled].active,
+fieldset[disabled] .btn-grey.active {
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+.btn-grey .badge {
+    color: #428bca;
+    background-color: #fff;
+}
+
+#settings {
+    font-size: 14pt;
+}
+
+#myTasks {
+   height: 530px;
+}
+
+#myTasksPanel {
+    height: 100%;
+    overflow-y:auto;
+}
+
+#pmDashboard {
+   height: 400px;
+}
+
+#pmDashboardTasksPanel {
+    height: 100%;
+    overflow-y:auto;
+}
+
+#dashboardPanelHeading{
+    background-color: rgba(255, 120, 0, 0.5);
+}
+#dashboardPanel > .panel-heading {
+    background-color : #00CCFF;
+}
+#adminButton {
+    width: 100%;
+}
+
+#projDescription{
+    resize: none;
+}
+
+#tmDashboardPanel{
+    height: 100%;
+}
+
+#tmDashboard{
+    height: 255px;
+}
+
+#gantt{
+    position: absolute;
+    left: 10px;
+       top: 60px; /* Header Height */
+       bottom: 55px; /* Footer Height */
+       width: 100%;
+}
+
+#export{
+    position:fixed;
+    left:10px;
+    bottom:20px;
+}
+#taskDescription {
+    resize: none;
+}
+
+#loginButtons{
+    float: right;
+    margin-right: 10px;
+}
+
+#createUserBtn{
+    margin-top: 20px;
+}
+
+.row-center div{
+    text-align: center;
+}
+
+.panel-heading i {
+    float: right;
+}
+
+.custom-tabs{
+    font-size: large;
+}
+
+.custom-tabs a{
+    color: #cc590d;
+}
+
+.custom-pill {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.custom-pill a{
+    color: #888888;
+}
+
+.custom-pill span{
+    font-size: 3em;
+    margin-top: 10px;
+}
+
+.custom-pill-container{
+    padding: 0;
+}
+input[type="radio"]{
+  margin: 0 20px 0 10px;
+}
+
+.row .mg-md {
+    margin-top: 20px;
+}
+
+#taskRemoveTeamMember{
+    width:100%;
+}
+
+#taskAddRole{
+    width:100%;
+}
+#search{
+    width:100%;
+}
+
+#addToTask{
+    width:100%;
+}
+
+.statistic-box {
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+
+.statistic-box .statistic-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    z-index: 2;
+}
+
+.statistic-box .statistic-value {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.statistic-box .statistic-icon-background{
+    position: absolute;
+    font-size: 120px;
+    right: 0;
+    bottom: -40px;
+    opacity: 0.2;
+}
+
+.statistic-box .statistic-icon-bg{
+    position: absolute;
+    font-size: 90px;
+    right: 10px;
+    bottom: -25px;
+    opacity: 0.3;
+}
+
+.statistic-box .statistic-title-tm{
+    text-align: left;
+    text-transform: uppercase;
+    padding-left: 10px;
+    font-size: 16px;
+    z-index: 2;
+}
+
+.statistic-box .statistic-value-tm {
+    text-align: left;
+    font-size: 40px;
+    font-weight: 500;
+    z-index: 2;
+    padding-left: 70px;
+}
+
+.statistic-box .info {
+    text-align: left;
+    opacity: 0.2;
+}
+
+.bg-success:hover{
+    background-color: #c1e2b3;
+}
+
+.bg-warning:hover{
+    background-color: #f7ecb5
+}
+
+.bg-danger:hover{
+    background-color: #e4b9b9;
+}
+.m-top-md{
+    margin-top: 20px;
+}
+.bg-spark {
+    background-color: #f2eac2;
+}
+.bg-spark:hover{
+    background-color: #f2e291;
+}
+.bg-ember {
+    background-color: #f2d6c2;
+}
+.bg-ember:hover{
+    background-color: #f2ba91;
+}
+.bg-flame{
+    background-color: #f2c2c2;
+}
+.bg-flame:hover{
+    background-color: #f29191;
+}
+.row .home-link{
+    text-decoration: none;
+    color: inherit;
+
+}
+
+#user-rem{
+    border-style: none;
+    background-color: inherit;
+    color: #c12e2a;
+    font-size: 25px;
+}
+#createProjectButton{
+    width: 100%;
+}
+
+#backToDash {
+    width:100%;
+}
+.taskTable {
+    text-align: center;
+}
+
+.taskTable th{
+    text-align: center;
+}
+
+.taskButton {
+    border-style: none;
+    background-color: inherit;
+}
+
+.taskTable a{
+    color: inherit;
+}
+
+.taskTable .lborder{
+    border-left:solid 1px lightgray;
+}
+
+.taskTable .add{
+    color: #91cef5;
+}
+
+.taskTable .finalise{
+    color: #70c494;
+}
+
+.taskTable .complete{
+    color: #21a9ef;
+}
+
+#createUserRole > button{
+    width: 100%;
+}
+
+.dropdown-menu {
+    width: 100%;
+    text-align: center;
+}
+
+.btn{
+    width: 100%;
+}
+

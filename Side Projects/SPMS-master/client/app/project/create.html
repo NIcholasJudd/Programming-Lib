@@ -1,0 +1,152 @@
+<div class="col-md-8 col-md-offset-2" ng-keypress="$event.which === 13 && submitProject()">
+    <h2>Company Name</h2>
+
+    <div class="panel panel-danger">
+        <div class="panel panel-heading">
+            <h4>Create a new Project</h4>
+        </div>
+        <div class="panel panel-body">
+            <form ng-submit="submitProject()">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="projName">Project Name
+                            <span ng-style="customStyle.fontStyle">{{errorMessage.projectName}}</span>
+                            <span class="glyphicon glyphicon-info-sign"
+                                  aria-hidden="true"
+                                  popover="{{tooltip.projectName}}"
+                                  popover-trigger="mouseenter">
+
+                            </span>
+                        </label>
+                        <input id="projName"
+                               ng-model="project.projectName"
+                               type="text"
+                               class="form-control"
+                               placeholder="Project Name"
+                               autofocus/>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="estBudget">Estimated Budget
+                            <span ng-style="customStyle.fontStyle">{{errorMessage.budget}}</span>
+                            <span class="glyphicon glyphicon-info-sign"
+                                  aria-hidden="true"
+                                  popover="{{tooltip.budget}}"
+                                  popover-trigger="mouseenter">
+
+                            </span>
+                        </label>
+                        <input id="estBudget"
+                               ng-model="project.budget"
+                               type="text"
+                               class="form-control"
+                               placeholder="$"/>
+                    </div>
+                </div>
+                <div class="row mg-md">
+                    <div class="col-md-6">
+                        <label for="startDate">Start Date
+                            <span ng-style="customStyle.fontStyle">{{errorMessage.startDate}}</span>
+                            <span class="glyphicon glyphicon-info-sign"
+                                  aria-hidden="true"
+                                  popover="{{tooltip.startDate}}"
+                                  popover-trigger="mouseenter">
+
+                            </span>
+                        </label>
+                        <p class="input-group">
+                            <input type="date" id="startDate" class="form-control" datepicker-popup
+                                   show-button-bar="false" ng-model="project.startDate" is-open="open1"
+                                   min-date="minDate" date-disabled="disabled(date, mode)" ng-required="true"
+                                   close-text="Close"/>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="open($event, 'open1')">
+                                    <i class="glyphicon glyphicon-calendar"></i>
+                                </button>
+                          </span>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="endDate">End Date
+                            <span ng-style="customStyle.fontStyle">{{errorMessage.endDate}}</span>
+                            <span class="glyphicon glyphicon-info-sign"
+                                  aria-hidden="true"
+                                  popover="{{tooltip.endDate}}"
+                                  popover-trigger="mouseenter">
+
+                            </span>
+                        </label>
+
+                        <p class="input-group">
+                            <input type="date" id="endDate" class="form-control" datepicker-popup
+                                   show-button-bar="false" ng-model="project.endDate" is-open="open2" min-date="minDate"
+                                   datepicker-options="dateOptions" date-disabled="disabled(date, mode)"
+                                   ng-required="true" close-text="Close"/>
+			                 <span class="input-group-btn">
+				                <button type="button" class="btn btn-default" ng-click="open($event, 'open2')">
+                                    <i class="glyphicon glyphicon-calendar"></i>
+                                </button>
+			                </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row mg-md">
+                    <div class="col-md-12">
+                        <label for="usernamePM">Project Manager
+                            <span ng-style="customStyle.fontStyle">{{errorMessage.projectManager}}</span>
+                            <span class="glyphicon glyphicon-info-sign"
+                                  aria-hidden="true"
+                                  popover="{{tooltip.projectManager}}"
+                                  popover-trigger="mouseenter">
+
+                            </span>
+                        </label>
+                        <input id="usernamePM"
+                               ng-model="selectedProjectManager"
+                               typeahead="name.email as name.name for name in users | filter:$viewValue | limitTo:8"
+                               class="form-control"
+                               placeholder="Select a Project Manager"
+                               ng-keydown="$event.which === 13 || $event.which === 9 && findUser(selectedProjectManager)"/>
+                        </input>
+                    </div>
+                </div>
+                <div class="row mg-md">
+                    <div class="col-md-12">
+                        <label for="projDescription">Description
+                            <span ng-style="customStyle.fontStyle">{{errorMessage.description}}</span>
+                            <span class="glyphicon glyphicon-info-sign"
+                                  aria-hidden="true"
+                                  popover="{{tooltip.description}}"
+                                  popover-trigger="mouseenter">
+
+                            </span>
+                        </label>
+							<textarea id="projDescription"
+                                      ng-model="project.description"
+                                      class="form-control"
+                                      rows="3"
+                                      placeholder="Project Description">
+							</textarea>
+                    </div>
+                </div>
+                <div class="row mg-md">
+                    <br>
+                    <div class="col-md-12">
+                        <button id="createProjectButton" type="submit" class="btn btn-success" ng-click="test()">
+                            Create Project
+                        </button>
+                    </div>
+                    </div>
+                <div class="row mg-md">
+                    <br>
+                    <div class="col-md-12">
+                        <a ui-sref="/dashboard/project-manager">
+                            <button id="backToDash" type="button" class="btn btn-danger">
+                                Back to Dash board
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

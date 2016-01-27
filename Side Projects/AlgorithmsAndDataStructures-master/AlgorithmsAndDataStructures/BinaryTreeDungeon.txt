@@ -1,0 +1,6 @@
+Professor: Take what you know about trees
+Professor: ...and explore the dungeon
+Companion:   In each chest is a treasure!
+Professor: ...but they will only be unlocked
+Companion:  If you can open them in the
+Companion:                        correct order!

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E278F8A8-BE76-44B8-90B6-E6B1F201016C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AlgorithmsAndDataStructures</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6FFA3695BDD1C748269C5A09966CB84E439E68F4</key>
+		<string>https://github.com/Dirk-Gentley/AlgorithmsAndDataStructures.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>AlgorithmsAndDataStructures.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6FFA3695BDD1C748269C5A09966CB84E439E68F4</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Dirk-Gentley/AlgorithmsAndDataStructures.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6FFA3695BDD1C748269C5A09966CB84E439E68F4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6FFA3695BDD1C748269C5A09966CB84E439E68F4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AlgorithmsAndDataStructures</string>
+		</dict>
+	</array>
+</dict>
+</plist>

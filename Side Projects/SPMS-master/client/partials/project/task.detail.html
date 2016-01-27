@@ -1,0 +1,178 @@
+<div class="container" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    <div class="row m-top-md">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-danger">
+                <div class="panel panel-heading">
+                    <h4>View Task Details</h4>
+                </div>
+                <div class="panel panel-body">
+                    <div class="col-md-12">
+                        <!--<form ng-submit="submitTask()">-->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="ProjectName">Project Name</label>
+                                    <input id="ProjectName"
+                                           ng-value="getCurrentProject()"
+                                           type="text"
+                                           class="form-control"
+                                           style="width:100%"
+                                           readonly/>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="taskPriority">Task Priority</label>
+                                    <select class="form-control" id="taskPriority" ng-model="modifyTask.priority" disabled="true"
+                                            ng-change="setPriority(priority)"
+                                            ng-options="priority as priority for priority in priorityLevel track by newTask.priority">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="taskName">Task Name</label>
+                                    <input id="taskName"
+                                           ng-model="modifyTask.taskName"
+                                           type="text"
+                                           class="form-control"
+                                            disabled="true">
+                                    </input>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="taskDescription">Task Description</label>
+                                    <textarea id="taskDescription"
+                                              ng-model="modifyTask.taskDescription"
+                                              type="text"
+                                              class="form-control"
+                                              rows="3"
+                                              disabled="true">
+                                    </textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="taskStartDate">Start Date</label>
+
+                                    <div style="display:inline-block; min-height:290px;">
+                                        <datepicker id="taskStartDate" ng-model="modifyTask.taskStartDate"
+                                                    min-date="minDate" show-weeks="true"
+                                                    date-disabled="true"
+                                                    class="well well-sm"></datepicker>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <label for="taskLikelyDuration">Task Likely Duration (days)</label>
+                                        <input id="taskLikelyDuration"
+                                               ng-model="modifyTask.taskLikelyDuration"
+                                               type="number"
+                                               class="form-control"
+                                               min="0"
+                                                disabled="true">
+                                        </input>
+                                    </div>
+                                    <div class="row">
+                                        <label for="taskOptimisticDuration">Task Optimistic Duration (days)</label>
+                                        <input id="taskOptimisticDuration"
+                                               ng-model="modifyTask.taskOptimisticDuration"
+                                               type="number"
+                                               class="form-control"
+                                               min="0"
+                                                disabled="true">
+                                        </input>
+                                    </div>
+
+                                    <div class="row">
+                                        <label for="taskPessimisticDuration">Task Pessimistic Duration (days)</label>
+                                        <input id="taskPessimisticDuration"
+                                               ng-model="modifyTask.taskPessimisticDuration"
+                                               type="number"
+                                               class="form-control"
+                                               min="0"
+                                                disabled="true">
+                                        </input>
+                                    </div>
+
+                                    <div class="row">
+                                        <label for="taskComfortZone">Task Comfort Zone (days)</label>
+                                        <input id="taskComfortZone"
+                                               ng-model="modifyTask.taskComfortZone"
+                                               type="number"
+                                               class="form-control"
+                                               min="0"
+                                                disabled="true">
+                                        </input>
+                                    </div>
+                                    <div class="row">
+                                        <label for="taskProgressPercentage">Task Progress Percentage (0-100)</label>
+                                        <input id="taskProgressPercentage"
+                                               ng-model="modifyTask.progress"
+                                               type="number"
+                                               class="form-control"
+                                               min="0"
+                                               max="100">
+                                        </input>
+                                    </div>
+                                    <div class="row m-top-md">
+                                        <div class="col-md-12">
+                                            <button type="submit" class="btn btn-success" style="width:100%;"
+                                                    ng-click="updateProgress(modifyTask.taskId, modifyTask.progress)">Update Task Progress
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="taskDependencies">Task Dependencies</label>
+                                    <select class="form-control" id="taskDependencies"
+                                            ng-model="dependencies"
+                                            ng-options="task.taskId as task.name for task in depList"
+                                            multiple readonly></select>
+                                </div>
+                            </div>
+                            <br>
+                            <hr/>
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <label for="taskAssignedTeamMembers">Assigned Team Members</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="teamMemberRole">Assigned Role</label>
+                                </div>
+                                <div ng-repeat="tm in assignedTeamMembers track by $index">
+                                    <div class="col-md-6">
+                                        <input id="taskAssignedTeamMembers"
+                                               type="text"
+                                               class="form-control"
+                                               value="{{tm.name}}"
+                                               readonly
+                                               ng-click="setTMA($index)">
+                                        </input>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <select class="form-control" id="teamMemberRole" ng-model="teamMemberRole" disabled="true"
+                                                ng-change="setRole(teamMemberRole, $index)"
+                                                ng-options="role as role for role in Roles">
+                                            <option value="">{{tm.roleName}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn"
+                                        style="width:100%;"><a href="/#/dashboard/tmDashboard">Return to Team Member Dashboard</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+

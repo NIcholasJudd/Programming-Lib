@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html ng-app="ngclient">
+<head>
+    <title>311 Project</title>
+
+    <!-- sets base routing point for client side files -->
+    <base href="/">
+
+    <!-- **** CDNs **** -->
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <!-- **** node_module Libraries **** -->
+
+
+    <!-- ** stylesheets ** -->
+
+    <!-- ** scripts (generated and bundled by Gulp  ** -->
+    <script type="text/javascript" src="dist/bundle.js"></script>
+
+
+    <!-- **** Manually Added Libraries **** -->
+
+        <!-- ** stylesheets ** -->
+
+        <link rel="stylesheet" type="text/css" href="libs/angular-slider-master/slider.css"/>
+        <link rel="stylesheet" type="text/css" href="libs/jointjs/joint.css" >
+
+        <!-- ** scripts ** -->
+
+        <script type="text/javascript" src="libs/jointjs/joint.js"></script>
+        <script type="text/javascript" src="libs/angular-slider-master/slider.js"></script>
+
+
+
+
+    <!-- **** configuration files **** -->
+
+    <script type="text/javascript" src="configFile.js"></script>
+
+
+    <!-- **** Application **** -->
+
+        <!-- ** stylesheets ** -->
+
+        <link rel="stylesheet" type="text/css" href="libs/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/app.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css"/>
+
+        <!-- ** scripts** -->
+
+        <script type="text/javascript" src="app/app.js"></script>
+
+        <script type="text/javascript" src="app/apn/controllers.js"></script>
+
+        <script type="text/javascript" src="app/auth/controllers.js"></script>
+        <script type="text/javascript" src="app/auth/services.js"></script>
+
+        <script type="text/javascript" src="app/signUp/controllers.js"></script>
+        <script type="text/javascript" src="app/signUp/services.js"></script>
+
+        <script type="text/javascript" src="app/cocomo2/controllers.js"></script>
+
+        <script type="text/javascript" src="app/effortEstimation/controllers.js"></script>
+
+        <script type="text/javascript" src="app/error/controllers.js"></script>
+
+        <script type="text/javascript" src="app/ganttChart/controllers.js"></script>
+        <script type="text/javascript" src="app/ganttChart/services.js"></script>
+
+        <script type="text/javascript" src="app/header/controllers.js"></script>
+
+        <script type="text/javascript" src="app/landing/controller.js"></script>
+
+        <script type="text/javascript" src="app/pert/pert.controller.js"></script>
+
+        <script type="text/javascript" src="app/pm-dashboard/controllers.js"></script>
+        <script type="text/javascript" src="app/pm-dashboard/services.js"></script>
+
+        <script type="text/javascript" src="app/project/controller.js"></script>
+        <script type="text/javascript" src="app/project/services.js"></script>
+
+        <script type="text/javascript" src="app/task/controllers.js"></script>
+        <script type="text/javascript" src="app/task/services.js"></script>
+
+        <script type="text/javascript" src="app/tm-dashboard/controllers.js"></script>
+        <script type="text/javascript" src="app/tm-dashboard/services.js"></script>
+
+        <script type="text/javascript" src="app/user/user.factory.js"></script>
+        <script type="text/javascript" src="app/user/user.controller.js"></script>
+        <script type="text/javascript" src="app/user/typeahead.controller.js"></script>
+</head>
+<body ng-app="ngclient">
+    <div ui-view="header"></div>
+
+    <div class="container" ui-view="container"></div>
+
+</body>
+</html>

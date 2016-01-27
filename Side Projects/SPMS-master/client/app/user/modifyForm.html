@@ -1,0 +1,175 @@
+
+<div class="form-group" >
+    <div class="row-fluid">
+        <div class="col-md-6">
+            <label for="firstName">First Name:
+            <span class="glyphicon glyphicon-info-sign"
+                  title="TESY"
+                  aria-hidden="true"
+                  popover="{{tooltip.firstName}}"
+                  popover-trigger="mouseenter"></span>
+            </label>
+            <input  id="firstName"
+                    type="text"
+                    class="form-control"
+                    ng-model="activeUser.firstName"/>
+        </div>
+        <div class="col-md-6">
+            <label for="lastName">Last Name:
+            <span class="glyphicon glyphicon-info-sign"
+                  title="TESY"
+                  aria-hidden="true"
+                  popover="{{tooltip.lastName}}"
+                  popover-trigger="mouseenter"></span>
+            </label>
+            <input id="lastName"
+                   type="text"
+                   class="form-control"
+                   ng-model="activeUser.lastName"/>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-md-6">
+            <label for="email">Email Address:
+            <span class="glyphicon glyphicon-info-sign"
+                  title="TESY"
+                  aria-hidden="true"
+                  popover="{{tooltip.email}}"
+                  popover-trigger="mouseenter"></span>
+            </label>
+            <input id="email"
+                   type="email"
+                   class="form-control"
+                   ng-model="activeUser.email"
+                   readonly/>
+        </div>
+        <div class="col-md-6">
+            <label for="phoneNumber">Phone Number:
+            <span class="glyphicon glyphicon-info-sign"
+                  title="TESY"
+                  aria-hidden="true"
+                  popover="{{tooltip.phone}}"
+                  popover-trigger="mouseenter"></span>
+            </label>
+            <input id="phoneNumber"
+                   type="text"
+                   class="form-control"
+                   ng-model="activeUser.phone"/>
+        </div>
+    </div>
+
+
+    <div class="row-fluid">
+        <div class="col-md-6" ng-controller="PasswordCheckCtrl">
+            <form name="password_strength" method="POST" id="pass_form">
+                <label for="pass">Password:
+                <span class="glyphicon glyphicon-info-sign"
+                      title="TESY"
+                      aria-hidden="true"
+                      popover="{{tooltip.password}}"
+                      popover-trigger="mouseenter"></span>
+                </label>
+                <input id="pass"
+                       name="pass"
+                       type="password"
+                       class="form-control"
+                       ng-model="activeUser.password"
+                       placeholder="Password"/>
+                <span id="passstrength"></span>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <label for="pass2">Re-Enter Password:
+            <span class="glyphicon glyphicon-info-sign"
+                  title="TESY"
+                  aria-hidden="true"
+                  popover="{{tooltip.password2}}"
+                  popover-trigger="mouseenter"></span>
+            </label>
+            <input id="pass2"
+                   name="pass"
+                   type="password"
+                   class="form-control"
+                   placeholder="Password"/>
+            <p id="validate-status"></p>
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="col-md-6">
+            <label for="preformanceIndex">User Performance:
+            <span class="glyphicon glyphicon-info-sign"
+                  title="TESY"
+                  aria-hidden="true"
+                  popover="{{tooltip.preformance}}"
+                  popover-trigger="mouseenter"></span>
+            </label>
+            <div class="col-md-12">
+                <rating id="preformanceIndex" ng-model="activeUser.performanceIndex" max="10"></rating>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="createUserRole">Roles:
+            <span class="glyphicon glyphicon-info-sign"
+                  title="TESY"
+                  aria-hidden="true"
+                  popover="{{tooltip.roles}}"
+                  popover-trigger="mouseenter"></span>
+            </label>
+            <div id="createUserRole" class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="role"
+                        data-toggle="dropdown" aria-expanded="true">
+                    {{selectedRole.name}}
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="role">
+                    <li role="presentation" ng-repeat="role in roles">
+                        <a role="menuitem" tabindex="-1" ng-click="setRole(role)">{{role.name}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-md-6">
+            <label for="skillList">Skills List:
+            <span class="glyphicon glyphicon-info-sign"
+                  title="TESY"
+                  aria-hidden="true"
+                  popover="{{tooltip.skills}}"
+                  popover-trigger="mouseenter"></span>
+            </label>
+            <select class="form-control"
+                    id="skillList"
+                    size="8"
+                    ng-model="selectedSkills"
+                    ng-change="updateSkills(selectedSkills)"
+                    multiple>
+                <option ng-repeat="skill in skills">{{skill}}</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label for="userSkill">Assigned Skills:
+            <span class="glyphicon glyphicon-info-sign"
+                  title="TESY"
+                  aria-hidden="true"
+                  popover="{{tooltip.selectedSkills}}"
+                  popover-trigger="mouseenter"></span>
+            </label>
+            <select class="form-control"
+                    id="userSkill"
+                    size="8"
+                    ng-model="selectedSkills"
+                    ng-change="removeSkills(selectedSkills)"
+                    multiple>
+                <option ng-repeat="skill in activeUser.skills">{{skill}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-md-12">
+            <br>
+            <button type="submit" class="form-control btn btn-success" ng-click="updateUser()">Update User Details
+            </button>
+        </div>
+    </div>
+</div>

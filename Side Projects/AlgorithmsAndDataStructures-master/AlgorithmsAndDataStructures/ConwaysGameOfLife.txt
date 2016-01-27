@@ -1,0 +1,18 @@
+Professor: Conway is a stupid name for a Professor.
+Companion:           Indeed. A stupid name.
+Companion:        Alberton is much better.
+Professor: Better indeed.
+Companion:              And what is Conways?
+Professor: Its a game of life. A cellular automata.
+Companion:                You're a cellular.
+Professor: And youre an automata!
+Companion:                           It is us.
+Professor: It is we.
+Companion:           And how does it work?
+Professor: The cellular is controlled by the automata.
+Companion:      The automata is the rules?
+Professor: ...and the rules control the cells.
+Professor: Too few, and they starve. Too many and they choke.
+Companion:                       A balance?
+Professor: A balance indeed!
+Professor: Now, place the cells and begin the automata!

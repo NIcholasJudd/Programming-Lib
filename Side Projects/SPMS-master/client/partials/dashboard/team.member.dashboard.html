@@ -1,0 +1,145 @@
+
+<!---  Team Member Dashboard HTML --->
+<div class="container" ng-init="">
+	<div class="row">
+		<div class="col-md-12">
+			<tabset class="custom-tabs" justified="true">
+				<tab ng-repeat="projectName in projectNames"
+					 heading="{{projectName}}"
+					 active="projectName === currentProject" ng-click="setProject(projectName);">
+						<!--ng-init="importTasks(projectName); "-->
+					<div class="project-container" ng-if="projectName === currentProject">
+						<h2>{{projectName}}</h2>
+						<div class="row m-top-md">
+						<div class="col-md-10">
+						<div class="row">
+				<div class="col-md-4">
+					<a class="home-link" href="" ng-click="showTaskPanel(1)">
+					<div class="statistic-box bg-danger">
+						<div class="statistic-value-tm"><span ng-bind="status.unassigned"/></div>
+						<div class="statistic-title-tm">Tasks assigned</div>
+						<div class="statistic-icon-bg">
+							<i class="glyphicon glyphicon-hand-down"></i>
+						</div>
+					</div>
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a class="home-link" href="" ng-click="showTaskPanel(2)">
+					<div class="statistic-box bg-warning">
+						<div class="statistic-value-tm"><span ng-bind="status.otg"/></div>
+						<div class="statistic-title-tm">Tasks in progress</div>
+						<div class="statistic-icon-bg">
+							<i class="glyphicon glyphicon-hand-right"></i>
+						</div>
+					</div>
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a class="home-link" href="" ng-click="showTaskPanel(3)">
+					<div class="statistic-box bg-success">
+						<div class="statistic-value-tm"><span ng-bind="status.finalised"/></div>
+						<div class="statistic-title-tm">Tasks Completed</div>
+						<div class="statistic-icon-bg">
+							<i class="glyphicon glyphicon-thumbs-up"></i>
+						</div>
+					</div>
+					</a>
+				</div>
+			</div>
+						<div class="row m-top-md">
+				<div class="col-md-12" ng-show="assigned">
+					<div class="panel panel-danger">
+						<div class="panel-heading"><h4>Tasks assigned to {{getUserName()}}.</h4></div>
+						<div class="panel-body" style="overflow: scroll">
+							<table class="table table-hover taskTable">
+								<tr>
+									<th></th>
+									<th>Project</th>
+									<th>Task#</th>
+									<th>Task Name</th>
+									<th>Priority</th>
+									<th>Details</th>
+									<th>Comment</th>
+								</tr>
+								<tr ng-repeat='unassigned in tasks | filter: {status: "unassigned"} track by unassigned.taskId'>
+									<td class="add"><button class="taskButton" ng-click="startTask(unassigned.taskId)"><i class="glyphicon glyphicon-plus"></i></button></td>
+									<td>{{unassigned.projectName}}</td>
+									<td>{{unassigned.taskNumber}}</td>
+									<td>{{unassigned.taskName}}</td>
+									<td ng-class="priorityLevel(unassigned.priority)">{{unassigned.priority}}</td>
+
+									<td class="lborder"><a href="#/project/taskDetails"><button class="taskButton" ng-click="setCurrentTask(unassigned.taskId)"><i class="glyphicon glyphicon-wrench"></i></button></a></td>
+									<td class="lborder"><button class="taskButton" ng-click="openModal(unassigned.taskId)"><i class="glyphicon glyphicon-comment"></i></button></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12" ng-show="onTheGo">
+					<div class="panel panel-warning">
+						<div class="panel-heading"><h4>Tasks {{getUserName()}} is working on.</h4></div>
+						<div class="panel-body" style="overflow: scroll">
+							<table class=" table table-hover taskTable">
+								<tr>
+									<th>Project</th>
+									<th>Task#</th>
+									<th>Task Name</th>
+									<th>Priority</th>
+									<th>Progress</th>
+									<th>Details</th>
+									<th>Comment</th>
+									<th>Finalise</th>
+								</tr>
+								<tr ng-repeat='otg in tasks | filter: {status: "on-the-go"} track by otg.taskId'>
+									<td>{{otg.projectName}}</td>
+									<td>{{otg.taskNumber}}</td>
+									<td>{{otg.taskName}}</td>
+									<td ng-class="priorityLevel(otg.priority)">{{otg.priority}}</td>
+									<td><progressbar max="1" value="otg.progress"></progressbar></td>
+									<td class="lborder"><a href="#/project/taskDetails"><button class="taskButton" ng-click="setCurrentTask(otg.taskId)"><i class="glyphicon glyphicon-wrench"></i></button></a></td>
+									<td class="lborder"><button class="taskButton" ng-click="openModal(otg.taskId)"><i class="glyphicon glyphicon-comment"></i></button></td>
+									<td class="lborder finalise"><button class="taskButton" ng-click="markFinalised(otg.taskId)"><i class="glyphicon glyphicon-ok"></i></button></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12" ng-show="complete">
+					<div class="panel panel-success">
+						<div class="panel-heading"><h4>Tasks completed by {{getUserName()}}.</h4></div>
+						<div class="panel-body" style="overflow: scroll">
+							<table class=" table table-hover taskTable">
+								<tr>
+									<th>Project</th>
+									<th>Task#</th>
+									<th>Task Name</th>
+									<th>Status</th>
+									<th>Comment</th>
+								</tr>
+								<tr ng-repeat='fin in tasks | filter: {status: "finalised"}'>
+									<td>{{fin.projectName}}</td>
+									<td>{{fin.taskNumber}}</td>
+									<td>{{fin.taskName}}</td>
+									<td>{{fin.status}}</td>
+									<td class="lborder"><button class="taskButton" ng-click="openModal(fin.taskId)"><i class="glyphicon glyphicon-comment"></i></button></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+							</div>
+							<div class="col-md-1 custom-pill-container" ng-controller="HomeCtrl">
+							<ul class="nav nav-pills nav-stacked" ng-repeat="item in pMenuTab">
+							<li class="custom-pill" role="presentation"><a ng-href="{{item.url}}"><span class="{{item.iconclass}}"></span><h6>{{item.title}}</h6></a></li>
+							</ul>
+							</div>
+						</div>
+					</div>
+				</tab>
+			</tabset>
+		</div>
+	</div>
+</div>
+
